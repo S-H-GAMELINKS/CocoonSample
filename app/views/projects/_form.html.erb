@@ -25,7 +25,7 @@
   <div id="tasks">
     <% if @tasks != nil %>
       <%= form.fields_for :tasks do |task| %>
-        <%= render 'food_fields', f: task %>
+        <%= render 'task_fields', f: task %>
       <% end %>
     <% end %>
     <div id="links">
