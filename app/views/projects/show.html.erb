@@ -10,5 +10,16 @@
   <%= @project.description %>
 </p>
 
+<p>
+  <% @tasks.each do |task| %>
+    <p><%= task.description %></p>
+    <% if task.done %>
+      <p>Done</p>
+    <% else %>
+      <p>Not Done</p>
+    <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
