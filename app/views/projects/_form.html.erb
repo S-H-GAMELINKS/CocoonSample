@@ -21,6 +21,18 @@
     <%= form.text_field :description %>
   </div>
 
+  <h3>Tasks</h3>
+  <div id="tasks">
+    <% if @tasks != nil %>
+      <%= form.fields_for :tasks do |task| %>
+        <%= render 'food_fields', f: task %>
+      <% end %>
+    <% end %>
+    <div id="links">
+      <%= link_to_add_association 'add task',form, :tasks %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
